@@ -29,7 +29,7 @@ function loadFileInto(recipeName, listName, whereTo) {
 				}
 			}
 			
-			document.querySelector(whereTo).innerHTML = responseHTML; // insert received output directly into the chosen DOM object
+			document.querySelector(whereTo).innerHTML = responseHTML; // insert compiled directly into the chosen DOM object
 
 		} else if ((this.readyState == 4) && (this.status != 200)) { // if .readyState is 4, the process is done; and if .status is NOT 200, output the error into the console
 
