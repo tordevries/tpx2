@@ -1,0 +1,123 @@
+/* import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* set all elements to border-box */
+* { box-sizing: border-box; }
+
+/* set baseline fonts, set dark background color, eliminate page padding/margin */
+body {
+  background-color: #91846d;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+}
+
+/* use cookie image as background to the title banner div */
+#titleBanner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-image: none; /* url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5574746.jpg&w=596&h=596&c=sc&poi=face&q=85); */
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.7);
+}
+
+/* make recipe title large, white with a shadow, and positioned specifically */
+#titleBanner h1 {
+  font-family: "Londrina Solid", "Roboto Slab", serif;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 500%;
+  padding: 0;
+  margin: 0 0 2vw 2vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-shadow: 0px 8px 8px #000000;
+  line-height: 80%;
+}
+
+#titleBanner h1.tp6 {
+	color: #fff;
+}
+
+/* make the 3 recipe columns display using a flexbox method */
+#recipeColumns {
+  padding: 2vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ebe4d8;
+  padding-bottom: 6vh;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.7);
+}
+
+/* define the relative widths of the 3 columns in the flexbox */
+#recipeColumns div#ingredients { flex-basis: 28%; }
+#recipeColumns div#equipment { flex-basis: 20%; }
+#recipeColumns div#directions { flex-basis: 50%; }
+
+/* reduce the left-hand padding of the list items */
+#recipeColumns ul,
+#recipeColumns ol {
+  padding-left: 1.1em;
+}
+
+ul, ol {
+	display: none;
+}
+
+ul.showMe,
+ol.showMe {
+	display: block;
+}
+
+
+/* make section headers in the Londrina font */
+#recipeColumns h4 {
+  font-family: "Londrina Solid", "Roboto Slab", serif; 
+  text-transform: uppercase;
+  font-size: 130%;
+  margin: 0;
+}
+
+/* set the text color of the footer and the link in it */
+#footer,
+#footer a {
+  text-align: center;
+  color: #ebe4d8;
+}
+
+/* for portrait layouts */
+@media screen and (orientation: portrait) {
+
+  /* remove the flexbox, making the internal DIVs full-width */
+  #recipeColumns {
+    padding: 1vh 2vh 2vh 2vh;
+    display: block;
+  }
+  
+  /* make the 3 lists larger */
+  #recipeColumns div {
+    position: relative;
+    margin: 2.5vh 0 5vh 0;
+    font-size: 120%;
+  }
+  
+}
+
+/* for portrait layouts that are narrow */
+@media screen and (orientation: portrait) and (max-width: 575px) {
+  
+  /* make the photo almost full-screen */
+  #titleBanner {
+    height: 98vh;
+  }
+  
+  /* make the title text huge */
+  #titleBanner h1 {
+    font-size: 900%;
+    margin: 0 0 3vh 3vh;
+  }
+  
+}
